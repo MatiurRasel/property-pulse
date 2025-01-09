@@ -1,0 +1,2 @@
+project create command -> npx create-next-app@latest
+rafce -> react arrow function component
