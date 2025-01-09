@@ -1,2 +1,14 @@
 project create command -> npx create-next-app@latest
 rafce -> react arrow function component
+
+--GIT RELATED COMMENTS 
+git add .
+git commit -m "Created layout, homepage & styles"
+git remote -v
+
+
+git remote remove PropertyPulse
+git remote add PropertyPulse https://github.com/MatiurRasel/PropertyPulse
+
+
+git push --set-upstream PropertyPulse master
