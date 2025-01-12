@@ -12,3 +12,7 @@ git remote add PropertyPulse https://github.com/MatiurRasel/PropertyPulse
 
 
 git push --set-upstream PropertyPulse master
+
+npm i react-icons
+npm in react-spinners
+npm i mongodb mongoose
