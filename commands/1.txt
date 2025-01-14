@@ -16,3 +16,8 @@ git push --set-upstream PropertyPulse master
 npm i react-icons
 npm in react-spinners
 npm i mongodb mongoose
+npm i next-auth
+
+openssl rand -base64 32
+OR IN POWERSHELL
+[convert]::ToBase64String((1..32 | ForEach-Object {Get-Random -Minimum 0 -Maximum 255} | ForEach-Object {[byte]$_}))
