@@ -6,6 +6,9 @@ export const GET = async (request,{params}) => {
     try {
         await connectDB();
 
+        // Destructure the id from the awaited params object
+        // const { id } = params;
+
         const property = await Property.findById(params.id);
 
         if(!property) {
