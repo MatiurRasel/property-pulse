@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import { useEffect,useState } from 'react';
 import { useParams } from 'next/navigation';
 import { fetchProperty } from '@/utils/requests';
@@ -9,6 +8,7 @@ import PropertyDetails from '@/components/PropertyDetails';
 import {FaArrowLeft} from 'react-icons/fa';
 import Spinner from '@/components/Spinner';
 import PropertyImages from '@/components/PropertyImages';
+import { toast } from 'react-toastify';
 
 const PropertyPage = () => {
   const {id} = useParams();
@@ -26,7 +26,7 @@ const PropertyPage = () => {
         const property = await fetchProperty(id);
         setProperty(property);
       } catch(error) {
-        console.error('Error fetching property: ', error);
+        toast.error('Error fetching property: ', error);
 
       } finally {
         setLoading(false);
