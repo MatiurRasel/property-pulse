@@ -56,7 +56,7 @@ const BookmarkButton = ({property}) => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    propertyId: property._id
+                    property: property
                 })
             });
 
@@ -65,9 +65,14 @@ const BookmarkButton = ({property}) => {
                 toast.success(data.message);
                 setIsBookmarked(data.isBookmarked);
             }
-            if(res.status === 201) {
+            if(res.status === 403) {
                 const data = await res.json();
                 toast.warn(data.message);
+                setIsBookmarked(data.isBookmarked);
+            }
+            if(res.status === 400) {
+                const data = await res.json();
+                toast.error(data.message);
                 setIsBookmarked(data.isBookmarked);
             }
 

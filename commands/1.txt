@@ -31,5 +31,7 @@ npm install maplibre-gl react-map-gl
 npm install react-leaflet leaflet
 npm install maplibre-gl@^2.4.0
 
+npm i react-share
+
 
 

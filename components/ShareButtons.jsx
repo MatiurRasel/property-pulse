@@ -1,12 +1,65 @@
-import {FaShare} from 'react-icons/fa';
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  EmailShareButton,
+  EmailIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  PinterestShareButton,
+  PinterestIcon,
 
-const ShareButtons = () => {
+} from 'react-share';
+
+const ShareButtons = ({property}) => {
+  const shareUrl = `${process.env.NEXT_PUBLIC_DOMAIN}/properties/${property._id}`;
   return (
-    <button
-    className="bg-orange-500 hover:bg-orange-600 text-white font-bold w-full py-2 px-4 rounded-full flex items-center justify-center"
-  >
-    <FaShare className="mr-2"></FaShare> Share Property
-  </button>
+    <>
+      <h3 className="text-xl font-bold text-center pt-2">
+        Share this property
+      </h3>
+      <div className="flex justify-center space-x-4 py-4">
+        <FacebookShareButton 
+          url={shareUrl} 
+          quote={property.name} 
+          hashtag={`#${property.type.replace(/\s/g,'')}ForRent`}>
+          <FacebookIcon size={40} round={true} />
+        </FacebookShareButton>
+        <TwitterShareButton 
+          url={shareUrl} 
+          title={property.name} 
+          hashtags={[`${property.type.replace(/\s/g,'')}ForRent`]}>
+          <TwitterIcon size={40} round={true} />
+        </TwitterShareButton>
+        <WhatsappShareButton 
+          url={shareUrl} 
+          quote={property.name} 
+          separator=':: '>
+          <WhatsappIcon size={40} round={true} />
+        </WhatsappShareButton>
+        <LinkedinShareButton url={shareUrl} 
+          quote={property.name} 
+          hashtag={`#${property.type.replace(/\s/g,'')}ForRent`}>
+          <LinkedinIcon size={40} round={true} />
+        </LinkedinShareButton>
+        <PinterestShareButton 
+          url={shareUrl} 
+          quote={property.name} 
+          hashtag={`#${property.type.replace(/\s/g,'')}ForRent`}>
+          <PinterestIcon size={40} round={true} />
+        </PinterestShareButton>
+        <EmailShareButton 
+           url={shareUrl} 
+           subject={property.name} 
+           body={`Check out this property listing: ${shareUrl}}>`}>
+          <EmailIcon size={40} round={true} />
+        </EmailShareButton>
+
+      </div>
+    </>
   )
 }
 
