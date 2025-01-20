@@ -2,7 +2,7 @@ import connectDB from "@/config/database";
 import Property from "@/models/Property";
 
 
-//Get /api/properties/search
+// GET /api/properties/search
 export const GET = async (request) => {
     try {
         await connectDB();
