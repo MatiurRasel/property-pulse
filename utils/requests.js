@@ -8,12 +8,12 @@ async function fetchProperties({showFeatured = false} = {}) {
         return [];
       }
 
-      const endpoint = showFeatured
-      ? `${apiDomain}/properties/featured`
-      : `${apiDomain}/properties`;
+      // const endpoint = showFeatured
+      // ? `${apiDomain}/properties/featured`
+      // : `${apiDomain}/properties`;
   
-      const res = await fetch(endpoint,
-        {cache:'no-store'}
+      const res = await fetch(`${apiDomain}/properties${showFeatured ? '/featured' : ''}`
+        ,{cache:'no-store'}
       );
 
       if(!res.ok) {
@@ -35,7 +35,9 @@ async function fetchProperties({showFeatured = false} = {}) {
         return null;
       }
   
-      const res = await fetch(`${apiDomain}/properties/${id}`);
+      const res = await fetch(`${apiDomain}/properties/${id}`
+      //  ,{cache:'no-store'}
+      );
 
       if(!res.ok) {
         throw new Error('Failed to fetch data');
