@@ -8,6 +8,7 @@ import { GlobalProvider } from '@/context/GlobalContext';
 import 'react-toastify/dist/ReactToastify.css';
 import 'photoswipe/dist/photoswipe.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 
 export const metadata = {
@@ -27,6 +28,7 @@ const MainLayout = ({children}) => {
               <Footer></Footer>
               <ToastContainer></ToastContainer>
               <SpeedInsights />
+              <Analytics />
           </body>
         </html>
       </AuthProvider>
