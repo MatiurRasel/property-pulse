@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.1.0",
     "cloudinary": "^2.5.1",
     "leaflet": "^1.9.4",
     "mapbox-gl": "^3.9.3",

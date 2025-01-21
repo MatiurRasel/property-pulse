@@ -35,3 +35,5 @@ npm i react-share
 npm i photoswipe react-photoswipe-gallery
 
 
+npm i @vercel/speed-insights
+
