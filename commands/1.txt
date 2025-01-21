@@ -26,12 +26,12 @@ npm i cloudinary
 npm i react-toastify
 --Need Credite card Info
 npm install react-map-gl mapbox-gl react-geocode
---ALternative
+--Alternative
 npm install maplibre-gl react-map-gl
 npm install react-leaflet leaflet
 npm install maplibre-gl@^2.4.0
 
 npm i react-share
-
+npm i photoswipe react-photoswipe-gallery
 
 

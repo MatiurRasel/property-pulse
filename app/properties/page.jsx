@@ -1,17 +1,10 @@
 
-import PropertyCard from '@/components/PropertyCard';
+import Properties from '@/components/Properties';
 import PropertySearchForm from '@/components/PropertySearchForm';
-import { fetchProperties } from '@/utils/requests';
 
 // This is a server component
  const PropertiesPage = async () => {
 
-  // Fetch properties server-side
-  const properties = await fetchProperties();
-
-  //Sort Properties by date
-  properties.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
-  
   return (
     <>
         {/* Static Header Section */}
@@ -21,24 +14,7 @@ import { fetchProperties } from '@/utils/requests';
   
             </div>
         </section>
-  
-        {/* Dynamic Properties Section */}
-        <section className="px-4 py-6">
-          <div className="container-xl lg:container m-auto px-4 py-6">
-                {properties.length === 0 ? (
-                  <p>No properties found</p>
-                ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {properties.map((property, index) => (
-                        <PropertyCard key={index} property={property}></PropertyCard>
-                      ))
-                    }
-                </div>
-                )}
-                
-          </div>
-        </section>
-              
+        <Properties></Properties>
     </>
   )
 }
